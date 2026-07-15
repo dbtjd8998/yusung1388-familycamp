@@ -37,44 +37,11 @@
             border-top: 5px solid #1a365d;
         }
 
-        .age-badge {
-            display: inline-block;
-            background-color: #e2e8f0;
-            color: #4a5568;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-
-        .camp-purpose-text {
-            font-size: 16px;
-            color: #2b6cb0;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
         .header-section h1 {
             font-size: 32px;
             color: #1a365d;
             margin-bottom: 0;
             line-height: 1.3;
-        }
-
-        .header-divider {
-            width: 40px;
-            height: 3px;
-            background-color: #cbd5e0;
-            margin: 25px auto 20px;
-            border-radius: 2px;
-        }
-
-        .small-notice {
-            font-size: 14px;
-            color: #718096;
-            line-height: 1.5;
         }
 
         /* 일정 안내 박스 */
@@ -89,8 +56,9 @@
         .schedule-box h2 {
             font-size: 20px;
             color: #1a365d;
-            text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
         }
 
         .meeting-info {
@@ -112,7 +80,7 @@
             margin-bottom: 0;
         }
 
-        /* 테이블 스타일 */
+        /* 테이블 스타일 (다시 모든 셀 가운데 정렬) */
         .table-responsive {
             overflow-x: auto;
             border-radius: 8px;
@@ -123,13 +91,14 @@
             width: 100%;
             border-collapse: collapse;
             min-width: 500px;
-            text-align: center;
         }
 
         th, td {
             border: 1px solid #e2e8f0;
-            padding: 12px 10px;
+            padding: 14px 12px;
             font-size: 14px;
+            line-height: 1.5;
+            text-align: center; /* 전체 가운데 정렬 적용 */
         }
 
         th {
@@ -140,6 +109,13 @@
 
         td {
             background-color: #fff;
+            color: #2d3748;
+        }
+
+        /* 시간 열만 조금 더 강조 */
+        td:nth-child(1), td:nth-child(4) {
+            font-weight: 500;
+            color: #4a5568;
         }
         
         tr:nth-child(even) td {
@@ -167,14 +143,13 @@
             margin-left: -5px;
         }
 
-        /* 강조용 legend 스타일 */
         .legend-highlight {
             background-color: #c53030 !important;
             font-size: 18px;
             padding: 10px 25px;
         }
 
-        /* 알림 박스 */
+        /* 알림 박스 (좌측 정렬 유지) */
         .alert-box {
             background-color: #fff5f5;
             border: 1px solid #fed7d7;
@@ -183,6 +158,7 @@
             font-size: 15px;
             color: #4a5568;
             margin-bottom: 25px;
+            text-align: left;
         }
 
         .alert-box strong {
@@ -203,10 +179,6 @@
         /* 입력 폼 요소 */
         .form-group {
             margin-bottom: 25px;
-        }
-
-        .form-group:last-child {
-            margin-bottom: 0;
         }
 
         .form-row {
@@ -235,7 +207,7 @@
             display: block;
         }
 
-        input[type="text"], input[type="tel"], input[type="number"], input[type="email"], input[type="date"], select, textarea {
+        input[type="text"], input[type="tel"], input[type="number"], input[type="email"], select, textarea {
             width: 100%;
             padding: 14px;
             border: 1px solid #cbd5e0;
@@ -245,7 +217,6 @@
             transition: all 0.2s ease;
         }
         
-        /* 기타 텍스트 입력칸 전용 스타일 */
         input.small-input {
             padding: 10px 14px;
             flex: 1;
@@ -258,14 +229,14 @@
             background-color: #fff;
         }
 
-        .radio-group, .checkbox-group {
+        .radio-group {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
             margin-top: 8px;
         }
 
-        .radio-item, .checkbox-item {
+        .radio-item {
             display: flex;
             align-items: center;
             gap: 8px;
@@ -302,9 +273,11 @@
             color: #2d3748;
             margin-bottom: 15px;
             font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* 개인정보 스크롤 제거 박스 */
         .info-static-box {
             background-color: #fff;
             border: 1px solid #cbd5e0;
@@ -324,7 +297,7 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* 하단 기관명 */
+        /* 하단 기관명 (유지) */
         .org-footer {
             margin-top: 40px;
             padding: 30px;
@@ -338,31 +311,12 @@
             margin-bottom: 30px;
         }
 
-        .org-item {
-            flex: 1;
-        }
+        .org-item { flex: 1; }
+        .org-label { display: block; font-size: 13px; color: #718096; margin-bottom: 8px; }
+        .org-name { font-size: 15px; font-weight: bold; color: #2d3748; line-height: 1.5; }
+        .org-divider { width: 1px; height: 50px; background-color: #e2e8f0; }
 
-        .org-label {
-            display: block;
-            font-size: 13px;
-            color: #718096;
-            margin-bottom: 8px;
-        }
-
-        .org-name {
-            font-size: 15px;
-            font-weight: bold;
-            color: #2d3748;
-            line-height: 1.5;
-        }
-
-        .org-divider {
-            width: 1px;
-            height: 50px;
-            background-color: #e2e8f0;
-        }
-
-        /* 다짐 문구 박스 */
+        /* 다짐 문구 박스 (유지) */
         .pledge-box {
             background-color: #ebf8ff;
             border-radius: 12px;
@@ -372,21 +326,9 @@
             border: 1px solid #bee3f8;
         }
         
-        .pledge-box .pledge-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2b6cb0;
-            margin-bottom: 15px;
-        }
-        
-        .pledge-box .pledge-text {
-            font-size: 15px;
-            color: #4a5568;
-            line-height: 1.8;
-            word-break: keep-all;
-        }
+        .pledge-box .pledge-title { font-size: 18px; font-weight: bold; color: #2b6cb0; margin-bottom: 15px; }
+        .pledge-box .pledge-text { font-size: 15px; color: #4a5568; line-height: 1.8; word-break: keep-all; }
 
-        /* 제출 버튼 */
         .btn-submit {
             display: block;
             width: 100%;
@@ -402,11 +344,8 @@
             box-shadow: 0 4px 6px rgba(26, 54, 93, 0.2);
         }
 
-        .btn-submit:hover {
-            background-color: #2b6cb0;
-        }
+        .btn-submit:hover { background-color: #2b6cb0; }
 
-        /* 모바일 대응 */
         @media (max-width: 600px) {
             body { padding: 15px 10px; }
             .header-section { padding: 30px 20px; }
@@ -422,13 +361,12 @@
 
 <div class="container">
     <div class="header-section">
-<img src=https://i.ibb.co/VY1WFSm7/0701-3.png alt="캠프 이미지" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; margin: 20px auto; display: block;">
+        <img src="https://i.ibb.co/VY1WFSm7/0701-3.png" alt="캠프 이미지" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; margin: 0 auto 20px; display: block;">
         <h1>가족치유캠프 신청서</h1>
+    </div>
 
-       
     <div class="schedule-box">
         <h2>📅 프로그램 일정 안내</h2>
-        
         <ul class="meeting-info">
             <li>🌳 <strong>캠프 기간:</strong> 9월 5일 (토) ~ 9월 6일 (일)</li>
             <li>💌 <strong>사전 모임:</strong> 8월 중 온라인(비대면)으로 진행 예정</li>
@@ -446,10 +384,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>08:00~09:00</td><td>📍 캠프장소<br>: <span style="font-weight: bold;">서천청소년수련관</span></td><td>아침식사</td><td>08:00~09:00</td></tr>
+                    <tr><td>08:00~09:00</td><td>📍 캠프장소:<br><span style="font-weight: bold; color:#1a365d;">서천청소년수련관</span></td><td>아침식사</td><td>08:00~09:00</td></tr>
                     <tr><td>09:00~10:00</td><td>이동</td><td rowspan="2">[자녀집단] / [부모집단]</td><td>09:00~10:00</td></tr>
                     <tr><td>10:00~11:00</td><td>등록</td><td>10:00~11:00</td></tr>
-                    <tr><td>11:00~12:00</td><td>입소식 및 OT</td><td>[가족집단] 지역별 특색 활동</td><td>11:00~12:00</td></tr>
+                    <tr><td>11:00~12:00</td><td>입소식 및 OT</td><td>[가족집단]<br>지역별 특색 활동</td><td>11:00~12:00</td></tr>
                     <tr><td>12:00~13:00</td><td>점심식사</td><td>점심식사</td><td>12:00~13:00</td></tr>
                     <tr><td>13:00~14:00</td><td>[가족집단] 소개</td><td rowspan="3">[가족집단]<br>우리가족 함께하기</td><td>13:00~14:00</td></tr>
                     <tr><td>14:00~15:00</td><td rowspan="2">[자녀집단] / [부모집단]</td><td>14:00~15:00</td></tr>
@@ -462,7 +400,8 @@
                 </tbody>
             </table>
         </div>
-        <span class="help-text" style="text-align: right; margin-top: 10px;">👉 표를 좌우로 넘겨보실 수 있습니다.</span>
+        <span class="help-text" style="text-align: right; margin-top: 10px;">👉 표를 좌우로 스크롤하여 보실 수 있습니다.</span>
+        <span class="help-text" style="text-align: right; margin-top: 10px;">해당 내용은 상황에 따라 변경될 수 있음을 안내드립니다.</span>
     </div>
 
     <form action="https://formspree.io/f/xykvkvjz" method="POST">
@@ -483,10 +422,10 @@
             </div>
         </fieldset>
 
-<fieldset>
+        <fieldset>
             <legend class="legend-highlight">1. 참가자 동의서 (필수)</legend>
             <div class="terms-box">
-                <p style="font-weight: bold; font-size: 16px; color: #2d3748; margin-bottom: 25px; text-align: center;">【초등1연령 미디어과의존 가족치유캠프 참가자 동의서】</p>
+                <p style="font-weight: bold; font-size: 16px; color: #2d3748; margin-bottom: 25px; border-bottom: 2px solid #cbd5e0; padding-bottom: 10px;">【초등1연령 미디어과의존 가족치유캠프 참가자 동의서】</p>
                 
                 <div class="clause">
                     <div class="clause-title">✅ 안전 지키기!</div>
@@ -511,7 +450,6 @@
                     </div>
                 </div>
 
-
                 <div class="clause">
                     <div class="clause-title">✅ 개인정보 수집 및 이용 동의</div>
                     <div class="info-static-box">
@@ -523,11 +461,11 @@
                         <div style="padding-left: 15px; margin-top: 5px; margin-bottom: 10px;">
                             ① 참가자의 심층상담 및 위기 상황에 대한 개입 등 사례관리 : 성명, 주민등록번호, 건강관련사항, 학력사항, 가족관계, 수급자정보 등<br>
                             ② 참가자 및 보호자와 의사소통, 정보 전달 등에 이용 : 성명, 주소, 핸드폰번호, 전화번호, Email<br>
-                            ③ 사례집, 교수학습활동 안내 및 홍보 자료 : 사례, 효과성 평가 설문 결과, 사진, 영상 (외부 자료 제공시 가명 및 모자이크 처리) 등
+                            ③ 사례집, 교수학습활동 안내 및 홍보 자료 : 사례, 효과성 평가 설문 결과, 사진, 영상 등
                         </div>
                         
                         <strong>제2조 (개인정보의 제3자 제공에 관한 사항)</strong><br>
-                        가. 필요시 귀하로부터 제공받은 정보를 청소년복지지원법 시행령 제4조 4항의 필수연계기관(공공보건의료기관, 보건소, 지방고용관서, 경찰서 등) 및 <strong>성평등가족부</strong>, 한국청소년상담복지개발원, 기획재정부, 외부감사인(정산 목적) 등에 제공할 수 있음<br><br>
+                        가. 필요시 귀하로부터 제공받은 정보를 필수연계기관(공공보건의료기관 등) 및 <strong>성평등가족부</strong>, 한국청소년상담복지개발원 등에 제공할 수 있음<br><br>
                         
                         <strong>제3조 (개인정보 보유 및 이용기간)</strong><br>
                         가. 상담완료일로부터 5년간 보관 및 보존, 보존기간 경과 시 즉시 폐기<br>
@@ -540,7 +478,9 @@
                 </div>
             </div>
 
-            <p style="margin-bottom: 25px; font-weight: bold; text-align: center; color: #2b6cb0;">「개인정보보호법」 및 「청소년복지 지원법, 시행령」등 관련 법규에 의거하여 본인은 위와 같이 동의함.</p>
+            <div style="background-color: #ebf8ff; border: 1px solid #bee3f8; padding: 15px 20px; border-radius: 8px; margin-bottom: 25px;">
+                <p style="font-weight: bold; color: #2b6cb0; font-size: 15px;">📌 「개인정보보호법」 및 「청소년복지 지원법, 시행령」등 관련 법규에 의거하여 본인은 위와 같이 동의합니다.</p>
+            </div>
 
             <div class="signature-area">
                 <div class="form-row">
@@ -563,7 +503,6 @@
                         <input type="tel" name="서명_법적대리인연락처" required>
                     </div>
                 </div>
-
                 <span class="help-text">* 캠프 당일, 위 내용에 해당하여 직접 서명을 요청할 수 있습니다.</span>
             </div>
         </fieldset>
@@ -586,8 +525,8 @@
 
             <div class="form-group">
                 <label class="field-label">참가자 주민등록번호</label>
-                <span class="help-text">*보험가입 및 처리 업무 목적, 해당 목적 외 사용 불가 및 지체 없이 파기</span>
-                <input type="text" name="2-3아동_주민등록번호" placeholder="[주민등록번호 13자리 기재]" required>
+                <span class="help-text">* 보험가입 및 처리 업무 목적 (해당 목적 외 사용 불가 및 지체 없이 파기)</span>
+                <input type="text" name="2-3아동_주민등록번호" placeholder="주민등록번호 13자리 기재 (예: 150101-3XXXXXX)" required>
             </div>
 
             <div class="form-row">
@@ -640,8 +579,8 @@
 
             <div class="form-group">
                 <label class="field-label">보호자 주민등록번호</label>
-                <span class="help-text">*보험가입 및 처리 업무 목적, 해당 목적 외 사용 불가 및 지체 없이 파기</span>
-                <input type="text" name="3-3보호자_주민등록번호" placeholder="[주민등록번호 13자리 기재]" required>
+                <span class="help-text">* 보험가입 및 처리 업무 목적 (해당 목적 외 사용 불가 및 지체 없이 파기)</span>
+                <input type="text" name="3-3보호자_주민등록번호" placeholder="주민등록번호 13자리 기재" required>
             </div>
 
             <div class="form-row">
@@ -700,54 +639,93 @@
                 <label class="field-label">건강관련 유의사항 (음식 알러지 등)</label>
                 <textarea name="4-3건강_유의사항" rows="2" placeholder="알러지 등 유의사항을 기재해 주세요. 없을 경우 '없음' 기재" required></textarea>
             </div>
-            <p style="color: #e53e3e; font-size: 14px; font-weight: bold; margin-top: 15px; text-align: center;">※ 응급 약물 제공이 불가하여 알러지 관련 약물은 꼭 상비해주시기 바랍니다.</p>
+            
+            <div style="background-color: #fff5f5; border-left: 4px solid #e53e3e; padding: 12px 15px; border-radius: 0 8px 8px 0; margin-top: 15px;">
+                <p style="color: #c53030; font-size: 14px; font-weight: bold; margin: 0;">※ 응급 약물 제공이 불가하여 알러지 관련 약물은 꼭 상비해주시기 바랍니다.</p>
+            </div>
         </fieldset>
 
         <fieldset>
-            <legend>5. 참여 경로 및 동기</legend>
+            <legend>5. 캠프 이동 수단 및 출발지</legend>
+            <div class="form-group">
+                <label class="field-label">이동 수단 선택</label>
+                <div class="alert-box" style="margin-top: 10px; margin-bottom: 15px; padding: 15px; background-color: #ebf8ff; border-color: #bee3f8;">
+                    <strong style="color: #2b6cb0; font-size: 15px; margin-bottom: 5px;">🚌 단체 버스 이용 안내</strong>
+                    • 탑승 장소: 유성구청소년수련관 앞<br>
+                    • 목적지: 서천청소년수련관
+                </div>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="5-1이동수단" value="자차" required> 자차 이용</label>
+                    <label class="radio-item"><input type="radio" name="5-1이동수단" value="버스"> 단체 버스 이용</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="field-label">출발지 기재</label>
+                <span class="help-text">자차 또는 버스 탑승 장소까지 오시는 출발지 위치(예: 동 이름 또는 간략한 주소)를 기재해 주세요.</span>
+                <input type="text" name="5-2출발지" required placeholder="예: 대전광역시 유성구 반석동">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>6. 참여 경로 및 동기</legend>
             <div class="form-group">
                 <label class="field-label">프로그램을 알게 된 계기</label>
                 <div class="radio-group">
-                    <label class="radio-item"><input type="radio" name="5-1알게된계기" value="상담실 내방" required> 1. 상담실 내방</label>
-                    <label class="radio-item"><input type="radio" name="5-1알게된계기" value="홈페이지"> 2. 홈페이지</label>
-                    <label class="radio-item"><input type="radio" name="5-1알게된계기" value="홍보물"> 3. 홍보물(배너, 현수막)</label>
-                    <label class="radio-item"><input type="radio" name="5-1알게된계기" value="학교"> 4. 학교(알림장)</label>
+                    <label class="radio-item"><input type="radio" name="6-1알게된계기" value="상담실 내방" required> 1. 상담실 내방</label>
+                    <label class="radio-item"><input type="radio" name="6-1알게된계기" value="홈페이지"> 2. 홈페이지</label>
+                    <label class="radio-item"><input type="radio" name="6-1알게된계기" value="홍보물"> 3. 홍보물(배너, 현수막)</label>
+                    <label class="radio-item"><input type="radio" name="6-1알게된계기" value="학교"> 4. 학교(알림장)</label>
                 </div>
                 <div style="margin-top: 15px; display: flex; align-items: center; gap: 10px;">
-                    <label class="radio-item" style="white-space: nowrap;"><input type="radio" name="5-1알게된계기" value="기타"> 5. 기타</label>
-                    <input type="text" name="5-1알게된계기_기타상세" class="small-input" placeholder="기타 선택 시 작성">
+                    <label class="radio-item" style="white-space: nowrap;"><input type="radio" name="6-1알게된계기" value="기타"> 5. 기타</label>
+                    <input type="text" name="6-1알게된계기_기타상세" class="small-input" placeholder="기타 선택 시 작성">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="field-label">프로그램 참여동기 및 기대 (서술형 작성)</label>
-                <textarea name="5-2참여동기" rows="4" required placeholder="이번 캠프를 신청하게 된 동기와 함께 캠프를 통해 우리 아이와 어떤 변화를 만들고 싶으신가요?"></textarea>
+                <textarea name="6-2참여동기" rows="4" required placeholder="이번 캠프를 신청하게 된 동기와 함께 캠프를 통해 우리 아이와 어떤 변화를 만들고 싶으신가요?"></textarea>
             </div>
         </fieldset>
 
         <fieldset>
-            <legend>6. 참가비 입금 확인</legend>
+            <legend>7. 참가비 입금 및 환불계좌 확인</legend>
 
             <div class="form-group">
                 <label class="field-label">사회적취약계층입니까?</label>
                 <span class="help-text">사회적취약계층 무료 - 입금자명에 '무료'라고 작성해 주세요.</span>
                 <div class="radio-group" style="margin-bottom: 20px;">
-                    <label class="radio-item"><input type="radio" name="6-1취약계층" value="기초생활수급자" required> 1. 기초생활수급자</label>
-                    <label class="radio-item"><input type="radio" name="6-1취약계층" value="차상위계층"> 2. 차상위계층</label>
-                    <label class="radio-item"><input type="radio" name="6-1취약계층" value="해당없음"> 3. 해당 없음 (일반 참가자)</label>
+                    <label class="radio-item"><input type="radio" name="7-1취약계층" value="기초생활수급자" required> 1. 기초생활수급자</label>
+                    <label class="radio-item"><input type="radio" name="7-1취약계층" value="차상위계층"> 2. 차상위계층</label>
+                    <label class="radio-item"><input type="radio" name="7-1취약계층" value="해당없음"> 3. 해당 없음 (일반 참가자)</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="field-label">입금자명 (참가비)</label>
-                <input type="text" name="6-2입금자" required placeholder="일반 참가자는 입금자명, 무료 대상자는 '무료' 기재">
+                <input type="text" name="7-2입금자" required placeholder="일반 참가자는 입금자명, 무료 대상자는 '무료' 기재">
+            </div>
+
+            <!-- 새롭게 추가된 환불계좌 및 예금주명 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="field-label">환불 계좌번호</label>
+                    <span class="help-text">은행명과 계좌번호를 함께 적어주세요.</span>
+                    <input type="text" name="7-3환불계좌" required placeholder="예: 하나은행 123-456789-01234">
+                </div>
+                <div class="form-group">
+                    <label class="field-label">예금주명</label>
+                    <span class="help-text">위 환불계좌의 예금주명을 적어주세요.</span>
+                    <input type="text" name="7-4예금주명" required placeholder="예: 홍길동">
+                </div>
             </div>
 
             <div class="alert-box">
                 <label class="field-label" style="font-size: 16px; margin-bottom: 10px;">💳 하나은행 658-910080-39405</label>
                 <span class="help-text" style="color: #4a5568;">(유성구청소년상담복지센터 캠프참가비)</span>
                 <div style="margin: 15px 0;">
-                    <span class="highlight-yellow">6월 12일(금)까지 100% 환불 가능 / 이후 환불 불가</span>
+                    <span class="highlight-yellow">8월 21일(금)까지 100% 환불 가능 / 이후 환불 불가</span>
                 </div>
                 <p style="font-size: 14px; margin-bottom: 20px;">원활한 캠프 진행을 위해 참고바랍니다.</p>
                 
@@ -755,8 +733,8 @@
                 
                 <label class="field-label" style="font-size: 14px;">• 위 안내된 캠프 일정과 <span style="color: #e53e3e;">'신청 후 취소 및 환불' 원칙을 충분히 숙지</span>하였으며 이에 동의하고 참가비 입금을 완료하였습니까?</label>
                 <div class="radio-group">
-                    <label class="radio-item"><input type="radio" name="6-3취소규정숙지_입금완료" value="예" required> 예</label>
-                    <label class="radio-item"><input type="radio" name="6-3취소규정숙지_입금완료" value="아니오"> 아니오</label>
+                    <label class="radio-item"><input type="radio" name="7-5취소규정숙지_입금완료" value="예" required> 예</label>
+                    <label class="radio-item"><input type="radio" name="7-5취소규정숙지_입금완료" value="아니오"> 아니오</label>
                 </div>
             </div>
         </fieldset>
